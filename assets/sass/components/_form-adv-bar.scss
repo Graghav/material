@@ -1,0 +1,38 @@
+.form-group {
+	.bar {
+		position: relative;
+  		display: block;
+	}
+	.bar:before,
+	.bar:after {
+	  content: '';
+	  height: 2px;
+	  width: 0;
+	  bottom: 1px;
+	  position: absolute;
+	  transition: 0.2s ease all;
+	}
+	.bar:before {
+	  left: 50%;
+	}
+	.bar:after {
+	  right: 50%; 
+	}
+	.form-control:focus {
+	  border-color: transparent;
+	}
+	.form-control:focus ~ .bar:before,
+	.form-control:focus ~ .bar:after {
+	  width: 50%;
+	}
+}
+
+// Color for the input bars
+
+@each $color in $palette-list-class {
+	$i: index($palette-list-class, $color);
+
+	.form-group-#{$color} .bar {
+		baclground: nth($palette-list-color, $i);
+	}
+}
