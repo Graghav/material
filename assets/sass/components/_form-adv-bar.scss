@@ -33,6 +33,6 @@
 	$i: index($palette-list-class, $color);
 
 	.form-group-#{$color} .bar {
-		baclground: nth($palette-list-color, $i);
+		background: nth($palette-list-color, $i);
 	}
 }
